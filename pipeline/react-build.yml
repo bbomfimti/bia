@@ -11,6 +11,6 @@ phases:
       - VITE_API_URL=http://localhost:3000 npm run build
 artifacts:
   files:
-  - '**/'
+    - '**/*'
   base-directory: client/build
    
