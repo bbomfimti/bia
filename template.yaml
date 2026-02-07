@@ -28,19 +28,19 @@ Globals:
   Function:
     Timeout: 3   
     MemorySize: 512
-  VpcConfig:
-    SecurityGroupIds:
-    - !Ref SecurityGroup
-    SubnetIds:
-      - subnet-056ccf7540b9a121a
-      - subnet-0a3877abd5589888c 
+    VpcConfig:
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      SubnetIds:
+        - subnet-056ccf7540b9a121a
+        - subnet-0a3877abd5589888c 
     Environment:      
       Variables:
-      DB_USER: !Ref DBUser
-      DB_NAME: !Ref DBName
-      DB_PWD: !Ref DBPassword
-      DB_HOST: !Ref DBHost
-      DB_PORT: 5432
+        DB_USER: !Ref DBUser
+        DB_NAME: !Ref DBName
+        DB_PWD: !Ref DBPassword
+        DB_HOST: !Ref DBHost
+        DB_PORT: 5432
   Api:
     Cors:
       AllowMethods: "'GET, PUT, POST, DELETE, OPTIONS'"
