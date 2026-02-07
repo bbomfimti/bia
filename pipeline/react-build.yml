@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+  build:
+    commands:
+      - echo "Iniciando build do react..."
+      - nmp install
+      - cd client && VITE_API_URL=http://localhost:3000 npm run build
+artifacts:
+  files:
+  - '**/'
+  base-directory: client/build
+   
