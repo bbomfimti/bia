@@ -6,8 +6,9 @@ phases:
   build:
     commands:
       - echo "Iniciando build do react..."
+      - cd client
       - npm install
-      - cd client && VITE_API_URL=http://localhost:3000 npm run build
+      - VITE_API_URL=http://localhost:3000 npm run build
 artifacts:
   files:
   - '**/'
