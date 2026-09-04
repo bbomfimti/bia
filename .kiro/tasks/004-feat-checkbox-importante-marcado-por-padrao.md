@@ -1,62 +1,49 @@
-# 004 - Checkbox "Importante" marcado por padrão no cadastro de tarefa
+# 004 - feat - Checkbox "Importante" marcado por padrão no cadastro de tarefa
 
-## Informações de Trabalho
-
+## Modelo de Trabalho
 - **Branch:** `004-feat-checkbox-importante-marcado-por-padrao`
 - **Derivar de:** `ia-main`
-- **Agente responsável:** dev (`.kiro/agents/dev.json`)
+- **Agente responsável pela execução:** dev
 
-> ⚠️ Ao iniciar esta task, verifique se está no branch `ia-main`. Caso contrário, informe e pergunte se pode retornar para ele antes de iniciar.
-> Após autorização: mova esta task para `doing/`, faça commit e push no `ia-main`, e crie o branch acima para iniciar a implementação.
+## Instruções de Início (para o agente dev)
+1. Verificar se está no branch `ia-main`. Caso não esteja, informar ao usuário e perguntar se pode retornar para ele antes de iniciar.
+2. Após autorização: mover esta task para **doing**, fazer commit e push no branch `ia-main`.
+3. Criar o branch `004-feat-checkbox-importante-marcado-por-padrao` a partir de `ia-main` e iniciar a implementação.
 
 ---
 
 ## Descrição
-
-Na tela de cadastro de tarefa, o checkbox **"Importante"** deve vir **marcado por padrão**, facilitando o fluxo do usuário que, na maioria das vezes, considera a tarefa como importante ao criá-la.
-
----
-
-## Localização do Arquivo
-
-`client/src/components/AddTask.jsx`
+Na tela de cadastro de tarefa, o checkbox **"Importante"** deve vir **marcado por padrão**, de forma que toda nova tarefa seja criada como importante, a menos que o usuário desmarque manualmente.
 
 ---
 
-## O que deve ser alterado
+## Arquivo Envolvido
+- `client/src/components/AddTask.jsx`
 
-No componente `AddTask`, o estado inicial de `importante` está definido como `false`:
+---
 
-```js
+## Mudança Necessária
+No componente `AddTask.jsx`, alterar o valor inicial do estado `importante` de `false` para `true`:
+
+```jsx
+// Antes
 const [importante, setImportante] = useState(false);
-```
 
-Deve ser alterado para `true`:
-
-```js
+// Depois
 const [importante, setImportante] = useState(true);
-```
-
-Além disso, ao limpar o formulário após o submit (`onSubmit`), o reset do campo `importante` também deve retornar para `true` (e não para `false`):
-
-```js
-setImportante(true); // era false
 ```
 
 ---
 
 ## Critérios de Aceite
-
-- [ ] Ao abrir o formulário de cadastro, o checkbox "Importante" já deve estar **marcado** (checked).
-- [ ] Ao submeter uma tarefa com o checkbox no estado padrão (marcado), a tarefa deve ser cadastrada como **importante = true**.
-- [ ] Após o submit, o formulário é resetado e o checkbox volta a aparecer **marcado** (não desmarcado).
-- [ ] O usuário ainda consegue **desmarcar** o checkbox livremente antes de salvar.
-- [ ] Nenhum outro campo ou comportamento do formulário é afetado.
+- [ ] Ao abrir o formulário de cadastro de tarefa, o checkbox "Importante" já deve estar marcado.
+- [ ] O usuário pode desmarcar o checkbox normalmente antes de salvar.
+- [ ] Após salvar uma tarefa, o formulário é resetado e o checkbox volta a aparecer **marcado** (padrão).
+- [ ] O comportamento das demais funcionalidades do formulário não é alterado.
+- [ ] A rota `/api/versao` continua respondendo corretamente após o build.
 
 ---
 
-## Impacto
-
-- **Escopo:** Apenas front-end (componente `AddTask.jsx`)
-- **Risco:** Baixo — alteração isolada no estado inicial de um campo
-- **Sem alterações necessárias:** backend, banco de dados, estilos CSS
+## Observações
+- Mudança de escopo mínimo: apenas o valor inicial do `useState` é alterado.
+- Não há impacto no backend nem em outros componentes.
