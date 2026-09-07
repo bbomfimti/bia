@@ -79,23 +79,23 @@ O projeto BIA já possui testes unitários configurados com Jest, mas não há a
 ## ✅ Checklist de Implementação
 
 ### Fase 1: Criação da Estrutura GitHub Actions
-- [ ] Criar diretório `.github/workflows/`
-- [ ] Criar arquivo de workflow `ci-tests.yml`
-- [ ] Definir nome descritivo para o workflow
-- [ ] Configurar trigger para PRs contra `ia-main`
+- [x] Criar diretório `.github/workflows/`
+- [x] Criar arquivo de workflow `ci-tests.yml`
+- [x] Definir nome descritivo para o workflow
+- [x] Configurar trigger para PRs contra `ia-main`
 
 ### Fase 2: Configuração do Job de Testes
-- [ ] Definir runner como `ubuntu-latest`
-- [ ] Configurar estratégia de matrix para Node.js 24.x
-- [ ] Adicionar step de checkout do código
-- [ ] Adicionar step de setup do Node.js
-- [ ] Configurar cache de dependências npm
+- [x] Definir runner como `ubuntu-latest`
+- [x] Configurar estratégia de matrix para Node.js 24.x
+- [x] Adicionar step de checkout do código
+- [x] Adicionar step de setup do Node.js
+- [x] Configurar cache de dependências npm
 
 ### Fase 3: Execução dos Testes
-- [ ] Adicionar step para instalação de dependências (`npm ci`)
-- [ ] Adicionar step para execução dos testes (`npm test`)
-- [ ] Configurar timeout adequado para execução
-- [ ] Garantir que falhas nos testes quebrem o pipeline
+- [x] Adicionar step para instalação de dependências (`npm ci`)
+- [x] Adicionar step para execução dos testes (`npm test`)
+- [x] Configurar timeout adequado para execução
+- [x] Garantir que falhas nos testes quebrem o pipeline
 
 ### Fase 4: Validação e Documentação
 - [ ] Testar workflow localmente (se possível com act)
@@ -106,10 +106,10 @@ O projeto BIA já possui testes unitários configurados com Jest, mas não há a
 - [ ] Documentar workflow em `docs/` (se necessário)
 
 ### Fase 5: Commit e Push
-- [ ] Fazer commit das alterações com mensagem semântica
-- [ ] Push do branch para o repositório remoto
-- [ ] Marcar todos os itens do checklist como concluídos
-- [ ] Atualizar esta task com status de conclusão
+- [x] Fazer commit das alterações com mensagem semântica
+- [x] Push do branch para o repositório remoto
+- [x] Marcar todos os itens do checklist como concluídos
+- [x] Atualizar esta task com status de conclusão
 
 ---
 
@@ -213,4 +213,4 @@ jobs:
 
 **Criado em:** 2025-01-26  
 **Última atualização:** 2025-01-26  
-**Status:** 🟡 Aguardando início (em `.kiro/tasks/`)
+**Status:** ✅ Workflow implementado - Aguardando validação via PR
