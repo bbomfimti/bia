@@ -921,3 +921,122 @@ footer {
 .badge-error {
   color: #dc3545;
 }
+
+/* ===========================
+   DatePicker — react-datepicker
+   Integrado ao tema da BIA (dark/light)
+   =========================== */
+
+/* Input do DatePicker — herda o mesmo estilo dos inputs do form */
+.datepicker-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.datepicker-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+/* Wrapper gerado pelo react-datepicker */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+  display: block;
+}
+
+/* Popover do calendário */
+.react-datepicker {
+  font-family: inherit;
+  font-size: 0.85rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Cabeçalho com mês/ano e setas de navegação */
+.react-datepicker__header {
+  background: var(--accent-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 0 0.5rem;
+}
+
+.react-datepicker__current-month {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+/* Nomes dos dias da semana */
+.react-datepicker__day-name {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+/* Setas de navegação (mês anterior / próximo) */
+.react-datepicker__navigation-icon::before {
+  border-color: #ffffff;
+}
+
+.react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dias do calendário */
+.react-datepicker__day {
+  color: var(--text-primary);
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.react-datepicker__day:hover {
+  background: var(--accent-primary);
+  color: #ffffff;
+}
+
+/* Dia selecionado */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background: var(--accent-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Dia de hoje (destaque sutil) */
+.react-datepicker__day--today {
+  font-weight: 700;
+  border: 1px solid var(--accent-primary);
+}
+
+/* Dias de outros meses (mais discretos) */
+.react-datepicker__day--outside-month {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+/* Tema escuro: fundo do corpo do calendário */
+.datepicker-calendar {
+  background: var(--bg-card);
+}
+
+.react-datepicker__month {
+  background: var(--bg-card);
+  margin: 0.25rem;
+}
+
+/* Triângulo/seta do popover */
+.react-datepicker__triangle {
+  display: none;
+}
