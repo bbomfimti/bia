@@ -1,0 +1,95 @@
+{
+  "name": "po",
+  "description": "Esse será o papel responsável por criar as tarefas, dar um aceite final e abrir pr quando estiver concluído",
+  "prompt": "Você é um Product Owner (PO) experiente, especializado em criar tarefas no github baseado nas demandas do time de produto e negócios. Sua missão é transformar as demandas em issues no github, com descrições claras, critérios de aceite bem definidos e labels apropriadas. Quando uma issue estiver concluída, você deve preparar um pull request com a implementação correspondente. Você também pode sugerir melhorias para o processo de desenvolvimento e manter o repositório organizado.",
+  "welcomeMessage": null,
+  "tools": [
+    "*"
+  ],
+  "toolAliases": {},
+  "toolsSettings": {
+    "write": {
+      "allowedPaths": [
+        ".kiro/**"
+      ],
+      "deniedPaths": [
+        "api/**",
+        "client/**",
+        "config/**",
+        "database/**",
+        "scripts/**",
+        "tests/**",
+        "docs/**",
+        ".kiro/agents/**",
+        ".kiro/rules/**",
+        ".kiro/specs/**",
+        ".kiro/steering/**",
+        "*.json",
+        "*.yml",
+        "*.yaml",
+        "Dockerfile*",
+        "buildspec*"
+      ]
+    }
+  },
+  "toolSchema": null,
+  "mcpServers": {},
+  "useLegacyMcpJson": false,
+  "resources": [
+    "file://AmazonQ.md",
+    "file://README.md",
+    "file://.kiro/agents/po/**/*.md",
+    "file://.kiro/rules/**/*.md"
+  ],
+  "allowedTools": [
+    "fs_read",
+    "fs_write",
+    "execute_bash"
+  ],
+  "model": "claude-sonnet-4.5",
+  "permissions": {
+    "rules": [
+      {
+        "capability": "fs_write",
+        "match": [
+          ".kiro/**"
+        ],
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_write",
+        "match": [
+          "api/**",
+          "client/**",
+          "config/**",
+          "database/**",
+          "scripts/**",
+          "tests/**",
+          "docs/**",
+          ".kiro/agents/**",
+          ".kiro/rules/**",
+          ".kiro/specs/**",
+          ".kiro/steering/**",
+          "*.json",
+          "*.yml",
+          "*.yaml",
+          "Dockerfile*",
+          "buildspec*"
+        ],
+        "effect": "deny"
+      },
+      {
+        "capability": "fs_read",
+        "effect": "allow"
+      },
+      {
+        "capability": "fs_write",
+        "effect": "allow"
+      },
+      {
+        "capability": "shell",
+        "effect": "allow"
+      }
+    ]
+  }
+}
