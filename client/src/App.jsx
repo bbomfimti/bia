@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 import { LogProvider, useLog } from "./contexts/LogContext.jsx";
 import Header from "./components/Header.jsx";
@@ -8,6 +8,7 @@ import Tasks from "./components/Tasks.jsx";
 import AddTask from "./components/AddTask.jsx";
 import Modal from "./components/Modal.jsx";
 import About from "./components/About.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 import DebugLogs from "./components/DebugLogs.jsx";
 
 const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8080";
@@ -208,6 +209,11 @@ function AppContent() {
   // Componente para página principal
   const HomePage = () => (
     <>
+      <div className="dashboard-link-container">
+        <Link to="/dashboard" className="btn-dashboard">
+          📊 Ver Dashboard de Prioridades
+        </Link>
+      </div>
       <AddTask onAdd={addTask} />
       {tasks.length > 0 ? (
         <Tasks
@@ -245,6 +251,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
           <Footer />
         </div>
